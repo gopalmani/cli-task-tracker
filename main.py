@@ -62,7 +62,7 @@ def delete_task(task_id):
 
 #List task
 def list_task(filter_status = None):
-    tasks = read_task_file()
+    tasks = read_task_file() or []
     for task in tasks:
         if filter_status is None or task['status'] == filter_status:
             print(task)
@@ -73,7 +73,7 @@ def main():
     create_task_file()
 
     if len(sys.argv) < 2:
-        print("Usage : python task_tracker.py <command. [<argv>]")
+        print("Usage : python3 main.py <command. [<argv>]")
         return
     
     command = sys.argv[1]
@@ -84,13 +84,13 @@ def main():
     
     elif command == 'update':
         if len(sys.argv) < 4:
-            print("Usage: python task_tracker.py update <task_id> <status>")
+            print("Usage: python3 main.py.py update <task_id> <status>")
             return
         update_task(sys.argv[2], sys.argv[3])
     
     elif command == 'delete':
         if len(sys.argv) < 3:
-            print("Usage Python task_tracker.py delete <task_id>")
+            print("Usage python3 main.py.py delete <task_id>")
         delete_task(sys.argv[2])
     
     elif command == 'list':
