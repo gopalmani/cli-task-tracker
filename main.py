@@ -14,7 +14,7 @@ def create_task_file():
 #Reading file
 def read_task_file():
     with open(TASKS_FILE, 'r') as f:
-        json.load(f)
+        return json.load(f)
 
 #writing task 
 def write_task(tasks):
