@@ -23,8 +23,10 @@ def write_task(tasks):
 
 #Generate unique id
 def generate_unique_id(tasks):
-    return max([task['id'] for task in tasks], default = 0) + 1
-
+    if not isinstance(tasks, list):
+        tasks = []
+    return max([task.get('id', 0) for task in tasks], default=0) + 1
+    
 #Add task
 def add_task(desc):
     tasks = read_task_file()
