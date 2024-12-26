@@ -29,7 +29,7 @@ def generate_unique_id(tasks):
     
 #Add task
 def add_task(desc):
-    tasks = read_task_file()
+    tasks = read_task_file() or []
     task = {
         'id' : generate_unique_id(tasks),
         'desc' : desc,
