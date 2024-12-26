@@ -84,13 +84,13 @@ def main():
     
     elif command == 'update':
         if len(sys.argv) < 4:
-            print("Usage: python3 main.py.py update <task_id> <status>")
+            print("Usage: python3 main.py update <task_id> <status>")
             return
         update_task(sys.argv[2], sys.argv[3])
     
     elif command == 'delete':
         if len(sys.argv) < 3:
-            print("Usage python3 main.py.py delete <task_id>")
+            print("Usage python3 main.py delete <task_id>")
         delete_task(sys.argv[2])
     
     elif command == 'list':
